@@ -67,7 +67,11 @@ class App extends PureComponent {
             </div>
           ))}
         </div>
-        <Show showId={selectedShow} />
+        {!selectedShow ? (
+          <p className="show-inforation t-show-info">Шоу не выбрано</p>
+        ) : (
+          <Show showId={selectedShow} />
+        )}
       </div>
     );
   }
