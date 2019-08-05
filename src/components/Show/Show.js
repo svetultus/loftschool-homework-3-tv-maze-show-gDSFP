@@ -41,13 +41,13 @@ class Show extends PureComponent {
       return false;
     }
 
-    const { name } = this.state.data;
-    let summary = this.state.data.summary,
-      image = this.state.data.image.medium,
-      genres = this.state.data.genres;
-
-    summary = summary.replace(/<[^>]+>/g, '');
-    genres = genres.join(', ');
+    const {
+      data,
+      data: { name }
+    } = this.state;
+    const summary = data.summary.replace(/<[^>]+>/g, '');
+    const genres = data.genres.join(', ');
+    const image = data.image.medium;
 
     return (
       <div className="show">
